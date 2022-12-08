@@ -46,7 +46,7 @@
     mode: '0755'
     # additional security measure; please note that GO doesn't build reproducably
     # disable if needed:
-    checksum: 09e67321962be9a3258adc3d5dd146c7fe551dc0
+    #checksum: 09e67321962be9a3258adc3d5dd146c7fe551dc0
 
 - name: create a system user for restic-rest
   ansible.builtin.user:
