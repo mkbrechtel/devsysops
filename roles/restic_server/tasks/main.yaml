@@ -13,6 +13,7 @@
     name:
       - golang-go
       - git
+      - ssl-cert
     state: present
 
 - name: git checkout of restic-rest TAG from upstream github repos
