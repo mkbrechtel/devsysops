@@ -1,0 +1,11 @@
+---
+
+- name: Deploy checker to the current system
+  hosts: localhost
+  become: true
+  roles:
+    - name: checker
+    - name: system_checks
+    - name: disk_checks
+    - name: network_checks
+    - name: notify_alerta

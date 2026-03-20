@@ -1,0 +1,5 @@
+---
+
+- name: Import deploy instance role
+  ansible.builtin.import_role:
+    role: check
