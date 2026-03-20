@@ -1,11 +1,11 @@
+#!/usr/bin/env -S ansible-playbook -i environments/test-in-vms/
 # SPDX-FileCopyrightText: 2016-2026 Markus Katharina Brechtel <markus.katharina.brechtel@thengo.net>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 ---
-- name: Create Incus VMs for testing sysops collection
-  hosts: localhost
-  connection: local
+- name: Test sysops collection roles
+  hosts: vms
   gather_facts: false
 
   vars:
@@ -13,16 +13,19 @@
     vm_memory: 2GiB
     vm_disk: 20GiB
 
-  tasks:
+  pre_tasks:
     - name: Create VM
+      delegate_to: localhost
+      become: false
       community.general.lxd_container:
         url: unix:/var/lib/incus/unix.socket
-        name: "{{ item }}"
+        name: "{{ inventory_hostname }}"
         state: started
         source:
           type: image
           mode: pull
           server: https://images.linuxcontainers.org
+          protocol: simplestreams
           alias: debian/13/cloud
         type: virtual-machine
         config:
@@ -36,9 +39,7 @@
         wait_for_container: true
         wait_for_ipv4_addresses: true
         timeout: 300
-      register: vm_results
-      loop: "{{ groups['vms'] }}"
 
 - name: Test sysops collection roles
   hosts: vms
-  become: true
+  gather_facts: false
