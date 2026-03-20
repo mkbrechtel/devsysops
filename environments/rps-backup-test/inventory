@@ -1,0 +1,4 @@
+[hosts]
+
+[backup_servers]
+rps-test-backup-server ansible_host=65.108.158.2

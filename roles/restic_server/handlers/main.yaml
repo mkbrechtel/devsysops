@@ -1,0 +1,13 @@
+- name: "Restart daemon on cert change"
+  listen: "certificate changed"
+  ansible.builtin.systemd:
+    name: restic-server.service
+    state: restarted
+
+- name: make new cert available as fact
+  listen: "certificate changed"
+  ansible.builtin.shell:
+    cmd: '( echo -n "[restic_server_cert]\ncert=" ;
+            sed --null-data -e "s/\\n/\\\\n/g" < {{ certificate_file|quote }} ;
+            echo ""
+          ) > /etc/ansible/facts.d/restic_server_cert.fact'

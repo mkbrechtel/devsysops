@@ -1,0 +1,47 @@
+services:
+  postgres:
+    image: docker.io/postgres:16-alpine
+    environment:
+      POSTGRES_DB: alerta
+      POSTGRES_USER: alerta
+      POSTGRES_PASSWORD: alerta
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  alerta:
+    image: docker.io/alerta/alerta-web:9.0.4
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
+    environment:
+      DATABASE_URL: postgres://alerta:alerta@postgres:5432/alerta
+      AUTH_REQUIRED: "false"
+      ADMIN_USERS: "admin@localhost"
+      ADMIN_KEY: "demo-api-key"
+      HEARTBEAT_TIMEOUT: 120
+      DELETE_EXPIRED_AFTER: 7200
+  backup:
+    build:
+      dockerfile: Dockerfile.backup
+    depends_on:
+      - alerta
+    env_file:
+      - backup.env
+    volumes:
+      - ./backup.sh:/backup.sh:ro
+    command: /backup.sh
+
+  test:
+    build:
+      dockerfile: Dockerfile.backup
+    depends_on:
+      - alerta
+    env_file:
+      - backup.env
+    volumes:
+      - ./backup.sh:/backup.sh:ro
+      - ./test.sh:/test.sh:ro
+    command: /test.sh
+
+volumes:
+  pgdata:
