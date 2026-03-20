@@ -2,21 +2,3 @@ version = 1
 SPDX-PackageName = "mkbrechtel.sysops"
 SPDX-PackageSupplier = "Markus Katharina Brechtel <markus.katharina.brechtel@thengo.net>"
 SPDX-PackageDownloadLocation = "https://github.com/mkbrechtel/sysops"
-
-[[annotations]]
-path = "**"
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2016-2026 Markus Katharina Brechtel <markus.katharina.brechtel@thengo.net>"
-SPDX-License-Identifier = "AGPL-3.0-or-later"
-
-[[annotations]]
-path = [".gitignore", ".git"]
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2016-2026 Markus Katharina Brechtel <markus.katharina.brechtel@thengo.net>"
-SPDX-License-Identifier = "AGPL-3.0-or-later"
-
-[[annotations]]
-path = ["roles/restic_client/**", "roles/restic_server/**", "backup_clients.yaml", "backup_servers.yaml", "environments/**"]
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2013-2022 Philipp Kaluza <consult@ghostroute.eu>"
-SPDX-License-Identifier = "AGPL-3.0-or-later"
