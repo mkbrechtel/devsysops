@@ -20,6 +20,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Notification roles: notify_email, notify_alerta
   - Meta roles: system_checks, disk_checks, network_checks
   - Checker monitor dashboard
+- Merged deploy-deploy collection into sysops
+  - Core `deploy` wrapper script with systemd journal integration
+  - Systemd unit support (system and user level): service, timer, path, target units
+  - Deployment roles: deploy_deploy, deploy_instance, ansible_play, ansible_pull
+  - Git hook and webhook trigger roles: triggered_by_git_hook, webhook_server
+  - Email notification support for deployment status
+  - Test roles: test_ohai, test_fail
 
 ### Changed
 - Reorganized checker file structure: moved files from global `files/` directory to their appropriate roles

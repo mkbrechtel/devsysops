@@ -1,0 +1,31 @@
+---
+
+- name: Validate deploy instance ID format
+  assert:
+    that:
+      - deploy_instance_id is defined
+      - deploy_instance_id is match('^[a-z0-9.-]+$')
+      - deploy_instance_id | length <= 128
+    fail_msg: "deploy_instance_id must contain only lowercase letters, numbers, dots, and hyphens (max 128 characters)"
+
+- name: Directory for the {{ deploy_instance_id }} deploy instance in {{ deploy_instance_scope }} scope
+  file:
+    path: "{{ deploy_instance_path }}"
+    state: directory
+
+- name: Template {{ ansible_parent_role_names | reverse | join(' ') }} environment config for the {{ deploy_instance_id }} deploy instance in {{ deploy_instance_scope }} scope
+  template:
+    src: deploy.env.j2 # Note that the template here is intentionally missing because we want it to be taken from the calling role
+    dest: "{{ deploy_instance_path }}/deploy.env"
+
+- name: Template {{ ansible_parent_role_names | reverse | join(' ') }} deployment init script for the {{ deploy_instance_id }} deploy instance in {{ deploy_instance_scope }} scope
+  template:
+    src: deploy.init.j2 # Note that the template here is intentionally missing because we want it to be taken from the calling role
+    dest: "{{ deploy_instance_path }}/deploy.init"
+    mode: 0755
+
+- name: Template {{ ansible_parent_role_names | reverse | join(' ') }} deployment script for the {{ deploy_instance_id }} deploy instance in {{ deploy_instance_scope }} scope
+  template:
+    src: deploy.j2 # Note that the template here is intentionally missing because we want it to be taken from the calling role
+    dest: "{{ deploy_instance_path }}/deploy"
+    mode: 0755

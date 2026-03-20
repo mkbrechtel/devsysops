@@ -1,0 +1,8 @@
+---
+
+- name: Deploy the RPS Deployment System for the current user account
+  hosts: localhost
+  become: true
+  roles:
+    - deploy_deploy
+    # - webhook_server
