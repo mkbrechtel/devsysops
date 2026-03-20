@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2016-2026 Markus Katharina Brechtel <markus.katharina.brechtel@thengo.net>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 # sysops Ansible Collection
 
 The **sysops** collection provides base system configuration and management roles for Debian systems. This collection focuses on common system administration tasks, user management, and container runtime setup.
@@ -53,4 +59,4 @@ ansible-galaxy collection install mkbrechtel.sysops
 
 ## License
 
-Apache-2.0
+AGPL-3.0-or-later

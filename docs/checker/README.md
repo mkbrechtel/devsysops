@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2016-2026 Markus Katharina Brechtel <markus.katharina.brechtel@thengo.net>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 # checker
 
 A comprehensive monitoring and alerting system that combines local checks with centralized monitoring infrastructure, deployed via Ansible.

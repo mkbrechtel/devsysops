@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2016-2026 Markus Katharina Brechtel <markus.katharina.brechtel@thengo.net>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 function fish_title
   # Just calculate this once, to save a few cycles when displaying the prompt
   if not set -q __fish_prompt_hostname

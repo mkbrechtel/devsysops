@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2016-2026 Markus Katharina Brechtel <markus.katharina.brechtel@thengo.net>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 # Users Role
 
 This role manages user accounts and their home directories on Debian/Ubuntu systems.
@@ -58,4 +64,4 @@ None.
 
 ## License
 
-Apache-2.0
+AGPL-3.0-or-later

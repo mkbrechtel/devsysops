@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2016-2026 Markus Katharina Brechtel <markus.katharina.brechtel@thengo.net>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 x 2024-11-02 Create base directory structure in Ansible role +ansible
 Implement checker-notify-handler@.service and checker-failure-handler@.service for alerts on successful checks
 Implement alerta API integration for notifications +alerts

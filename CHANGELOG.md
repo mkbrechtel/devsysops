@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2016-2026 Markus Katharina Brechtel <markus.katharina.brechtel@thengo.net>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 # Changelog
 
 All notable changes to this project will be documented in this file.

@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# SPDX-FileCopyrightText: 2016-2026 Markus Katharina Brechtel <markus.katharina.brechtel@thengo.net>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Ensure required variables are set
 if [ -z "$1" ]; then
     echo "Error: Usage: $0 <run_file>" >&2

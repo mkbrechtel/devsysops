@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2016-2026 Markus Katharina Brechtel <markus.katharina.brechtel@thengo.net>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 # motd
 
 Configure the system Message of the Day (MOTD).
@@ -27,4 +33,4 @@ Configure the system Message of the Day (MOTD).
 
 ## License
 
-Apache-2.0
+AGPL-3.0-or-later

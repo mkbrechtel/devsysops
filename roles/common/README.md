@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2016-2026 Markus Katharina Brechtel <markus.katharina.brechtel@thengo.net>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 # Common Role
 
 This role provides base system configuration for Debian/Ubuntu systems.
@@ -48,4 +54,4 @@ None.
 
 ## License
 
-Apache-2.0
+AGPL-3.0-or-later
