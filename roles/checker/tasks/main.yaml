@@ -4,6 +4,11 @@
 
 ---
 
+- name: Install monitoring-plugins-basic packages
+  ansible.builtin.apt:
+    pkg:
+      - monitoring-plugins-basic
+
 - name: Create base directories
   ansible.builtin.file:
     path: "{{ item }}"
