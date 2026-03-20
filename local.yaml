@@ -13,3 +13,5 @@
     - name: disk_checks
     - name: network_checks
     - name: notify_alerta
+    - deploy_deploy
+    # - webhook_server

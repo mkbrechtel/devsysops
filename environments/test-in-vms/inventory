@@ -1,9 +1,10 @@
-# SPDX-FileCopyrightText: 2013-2022 Philipp Kaluza <consult@ghostroute.eu>
 # SPDX-FileCopyrightText: 2016-2026 Markus Katharina Brechtel <markus.katharina.brechtel@thengo.net>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-[hosts]
+[vms]
+sysops-test-backup-server
 
-[backup_servers]
-rps-test-backup-server ansible_host=65.108.158.2
+[vms:vars]
+ansible_connection=community.general.incus
+ansible_incus_remote=local

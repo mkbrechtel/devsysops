@@ -4,7 +4,7 @@
 
 ---
 
-- name: Deploy the RPS Deployment System for the current user account
+- name: Deploy the Deployment System for the current user account
   hosts: localhost
   vars:
     deploy_systemd_units_scope: user
