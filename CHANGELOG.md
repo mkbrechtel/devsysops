@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Merged checker collection into sysops
+  - Checker framework: systemd-based monitoring with Nagios plugins
+  - Check roles: check_disk, check_memory, check_ping, check_systemd
+  - Notification roles: notify_email, notify_alerta
+  - Meta roles: system_checks, disk_checks, network_checks
+  - Checker monitor dashboard
+
+### Changed
+- Reorganized checker file structure: moved files from global `files/` directory to their appropriate roles
+
 ## [0.1.1] - 2026-02-02
 
 ### Fixed
