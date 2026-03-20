@@ -12,12 +12,7 @@ galaxy_info:
   platforms:
     - name: Debian
       versions:
-        - bookworm
-        - bullseye
-    - name: Ubuntu
-      versions:
-        - jammy
-        - focal
+        - trixie
   galaxy_tags:
     - ansible
     - configuration

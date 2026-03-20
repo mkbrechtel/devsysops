@@ -1,5 +1,0 @@
-# SPDX-FileCopyrightText: 2016-2026 Markus Katharina Brechtel <markus.katharina.brechtel@thengo.net>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
-# https://raw.githubusercontent.com/ansible/ansible/da5d8a6977b9438570c231638644618291cc86bf/lib/ansible/plugins/lookup/etcd3.py
