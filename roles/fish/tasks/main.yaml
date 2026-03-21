@@ -1,0 +1,30 @@
+# SPDX-FileCopyrightText: 2016-2026 Markus Katharina Brechtel <markus.katharina.brechtel@thengo.net>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+---
+
+- name: fish config directory
+  file:
+    path: /etc/fish/conf.d
+    state: directory
+
+- name: fish config files
+  copy:
+    src: global/
+    dest: /etc/fish/conf.d/
+  with_items:
+    - fish_title
+    - fish_prompt
+    - fish_greeting
+
+# root user
+- name: fish root user config directory
+  file:
+    path: /root/.config/fish/conf.d/
+    state: directory
+
+- name: fish root user config files
+  copy:
+    src: root/
+    dest: /root/.config/fish/conf.d/

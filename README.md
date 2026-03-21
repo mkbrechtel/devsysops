@@ -25,7 +25,19 @@ ansible-galaxy collection install mkbrechtel.sysops
 ## Included Roles
 
 - **ansible**: Ansible configuration and tools setup
-- **common**: Base system configuration (packages, repos, locales, timezone, etc.)
+- **common**: Base system configuration orchestrator (includes all roles below)
+- **debian_repos**: Debian APT repository configuration
+- **debian_packages**: Debian package installation
+- **root_user**: Root user account configuration
+- **ssh_agent**: SSH and GPG agent systemd user service setup
+- **hostname**: Hostname and /etc/hosts configuration
+- **locales**: System locale generation and configuration
+- **timezone**: System timezone configuration
+- **keyboard**: Keyboard layout configuration
+- **network**: Network configuration (resolvconf)
+- **sysctl_tweaks**: System sysctl performance tweaks
+- **microcode**: CPU microcode updates
+- **fish**: Fish shell configuration
 - **updates**: System updates management
 - **users**: User account management with home directory configuration
 - **podman**: Podman container runtime with DNS support

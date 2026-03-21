@@ -5,8 +5,7 @@
 ---
 
 - import_role:
-    name: common
-    tasks_from: debian_repos
+    name: debian_repos
 
 - name: update apt cache
   apt:

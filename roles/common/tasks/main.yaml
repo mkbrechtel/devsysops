@@ -5,47 +5,48 @@
 ---
 
 # packages setup
-- import_tasks: debian_repos.yaml
+- import_role:
+    name: debian_repos
   when:
     - ansible_distribution == "Debian"
     - not ansible_lsb.id is defined or ansible_lsb.id != "Raspbian"
 
-- import_tasks: debian_packages.yaml
+- import_role:
+    name: debian_packages
   when: ansible_distribution == "Debian"
 
 # user setup
-- import_tasks: root_user.yaml
-- import_tasks: ssh-agent.yaml
+- import_role:
+    name: root_user
+- import_role:
+    name: ssh_agent
 
 # system setup
-- import_tasks: hostname.yaml
+- import_role:
+    name: hostname
   when:
     - not ansible_bender is defined
     - not container_type | default('') == 'podman'
 
-- import_tasks: locales.yaml
+- import_role:
+    name: locales
 
-- import_tasks: timezone.yaml
+- import_role:
+    name: timezone
   when: not ansible_bender is defined
 
-- import_tasks: keyboard_configuration.yaml
+- import_role:
+    name: keyboard
   when: not ansible_bender is defined
 
-- import_tasks: network.yaml
-- import_tasks: tweaks.yaml
+- import_role:
+    name: network
+- import_role:
+    name: sysctl_tweaks
 
 # shell setup
-- import_tasks: shells/fish.yaml
+- import_role:
+    name: fish
   tags:
     - fish
-    - shells
-# - import_tasks: shells/xonsh.yaml
-#   tags:
-#     - xonsh
-#     - shells
-- name: shell for root user
-  user:
-    name: root
-    shell: "{{root_shell}}"
-  tags:
     - shells
