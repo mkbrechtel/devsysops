@@ -2,5 +2,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-root_ssh_key: false
-root_shell: /usr/bin/fish
+root_user_with_ssh_key: false
+root_user_shell: /usr/bin/fish
