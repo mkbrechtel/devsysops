@@ -42,4 +42,5 @@
 
 - name: Test sysops collection roles
   hosts: vms
-  gather_facts: false
+  roles:
+    - common
