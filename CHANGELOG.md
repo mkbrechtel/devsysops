@@ -29,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Test roles: test_ohai, test_fail
 
 ### Changed
+- Renamed `network` role to `resolvconf` and removed it from `common` dependencies
 - Reorganized checker file structure: moved files from global `files/` directory to their appropriate roles
 
 ## [0.1.1] - 2026-02-02

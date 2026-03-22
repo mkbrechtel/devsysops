@@ -5,7 +5,7 @@
 ---
 galaxy_info:
   author: mkbrechtel
-  description: Network configuration (resolvconf)
+  description: Resolvconf DNS configuration
   company: mkbrechtel
   license: AGPL-3.0-or-later
   min_ansible_version: "2.14"
@@ -15,8 +15,7 @@ galaxy_info:
         - bookworm
         - trixie
   galaxy_tags:
-    - network
-    - dns
     - resolvconf
+    - dns
 
 dependencies: []

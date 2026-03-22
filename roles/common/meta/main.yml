@@ -30,6 +30,5 @@ dependencies:
   - role: locales
   - role: timezone
   - role: keyboard
-  - role: network
   - role: sysctl_tweaks
   - role: fish

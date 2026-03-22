@@ -34,7 +34,7 @@ ansible-galaxy collection install mkbrechtel.sysops
 - **locales**: System locale generation and configuration
 - **timezone**: System timezone configuration
 - **keyboard**: Keyboard layout configuration
-- **network**: Network configuration (resolvconf)
+- **resolvconf**: Resolvconf DNS configuration
 - **sysctl_tweaks**: System sysctl performance tweaks
 - **microcode**: CPU microcode updates
 - **fish**: Fish shell configuration
