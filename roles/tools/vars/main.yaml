@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2016-2026 Markus Katharina Brechtel <markus.katharina.brechtel@thengo.net>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
-
+---
 tools_packages:
 
   # editors
@@ -11,6 +11,7 @@ tools_packages:
   - joe
 
   # shells
+  - zsh
   - fish
   - elvish
   - sash
@@ -28,11 +29,10 @@ tools_packages:
   - kitty-terminfo
 
   # network tools
+  - openssh-client
   - net-tools
   - iputils-ping
   - whois
-  - nmap
-  - tcpdump
   - bind9-dnsutils
   - mtr
   - oping
@@ -56,8 +56,6 @@ tools_packages:
   # file sync tools
   - rsync
   - zsync
-  - unison
-  - rclone
 
   # documentation
   - man-db
@@ -72,26 +70,23 @@ tools_packages:
   - python3-apt
   - golang
 
-  # system
-  - sudo
-  - console-setup
-  - dbus
-  - systemd-timesyncd
-
-  # localization
-  - locales
-
-  # security tools
-  - openssh-client
-  - ssh-agent-filter
+  # encryption tools
+  - openssl
   - gnupg
   - gnupg-agent
 
   # installation utils
   - debootstrap
+  - arch-install-scripts
 
   # hardware utils
   - pciutils
   - usbutils
   - acpi
   - lshw
+
+  # backup clients
+  - borgbackup2
+  - restic
+  - bup
+  - zbackup
