@@ -23,7 +23,7 @@ galaxy_info:
 
 dependencies:
   - role: hostname
-  - role: debian_sources
+  - role: debian_apt_sources
   - role: debian_packages
   - role: root_user
   - role: ssh_agent

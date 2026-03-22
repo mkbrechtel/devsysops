@@ -29,6 +29,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Test roles: test_ohai, test_fail
 
 ### Changed
+- Renamed `debian_sources` role to `debian_apt_sources`
+- Removed obsolete `debian_repos` role (refactored into `debian_apt_sources`)
+- Changed `updates` role to use meta dependency on `debian_apt_sources` instead of import_role
 - Renamed `network` role to `resolvconf` and removed it from `common` dependencies
 - Reorganized checker file structure: moved files from global `files/` directory to their appropriate roles
 

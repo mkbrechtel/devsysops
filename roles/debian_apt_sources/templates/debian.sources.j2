@@ -1,0 +1,19 @@
+{#
+SPDX-FileCopyrightText: 2016-2026 Markus Katharina Brechtel <markus.katharina.brechtel@thengo.net>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+#}
+
+Types: {{ debian_apt_sources_types }}
+URIs: {{ debian_apt_sources_mirror }}
+Suites: {{ debian_apt_sources_suites }}
+Components: {{ debian_apt_sources_components }}
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+{% if debian_apt_sources_with_security_suite %}
+Types: {{ debian_apt_sources_security_types }}
+URIs: {{ debian_apt_sources_security_mirror }}
+Suites: {{ debian_apt_sources_security_suites }}
+Components: {{ debian_apt_sources_components }}
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+{% endif %}

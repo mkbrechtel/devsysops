@@ -24,4 +24,5 @@ galaxy_info:
     - maintenance
     - apt
 
-dependencies: []
+dependencies:
+  - role: debian_apt_sources
