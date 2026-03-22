@@ -6,7 +6,7 @@
 
 # packages setup
 - import_role:
-    name: debian_repos
+    name: debian_sources
   when:
     - ansible_distribution == "Debian"
     - not ansible_lsb.id is defined or ansible_lsb.id != "Raspbian"

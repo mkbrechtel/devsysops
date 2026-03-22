@@ -1,0 +1,25 @@
+# SPDX-FileCopyrightText: 2016-2026 Markus Katharina Brechtel <markus.katharina.brechtel@thengo.net>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+debian_sources_components: >-
+  main
+  {% if debian_sources_with_contrib_component %}contrib{% endif %}
+  {% if debian_sources_with_non_free_firmware_component %}non-free-firmware{% endif %}
+  {% if debian_sources_with_non_free_component %}non-free{% endif %}
+
+debian_sources_types: >-
+  deb
+  {% if debian_sources_with_source_packages %}deb-src{% endif %}
+
+debian_sources_security_types: >-
+  deb
+  {% if debian_sources_with_security_source_packages %}deb-src{% endif %}
+
+debian_sources_suites: >-
+  {{ debian_sources_distribution }}
+  {% if debian_sources_with_updates_suite %}{{ debian_sources_distribution }}-updates{% endif %}
+  {% if debian_sources_with_backports_suite %}{{ debian_sources_distribution }}-backports{% endif %}
+
+debian_sources_security_suites: >-
+  {{ debian_sources_distribution }}-security

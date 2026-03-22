@@ -5,7 +5,7 @@
 ---
 
 - import_role:
-    name: debian_repos
+    name: debian_sources
 
 - name: update apt cache
   apt:

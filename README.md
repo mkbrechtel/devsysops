@@ -26,7 +26,7 @@ ansible-galaxy collection install mkbrechtel.sysops
 
 - **ansible**: Ansible configuration and tools setup
 - **common**: Base system configuration orchestrator (includes all roles below)
-- **debian_repos**: Debian APT repository configuration
+- **debian_sources**: Debian APT sources configuration (deb822 format)
 - **debian_packages**: Debian package installation
 - **root_user**: Root user account configuration
 - **ssh_agent**: SSH and GPG agent systemd user service setup

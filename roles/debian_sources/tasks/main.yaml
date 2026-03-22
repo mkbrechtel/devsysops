@@ -1,0 +1,24 @@
+# SPDX-FileCopyrightText: 2016-2026 Markus Katharina Brechtel <markus.katharina.brechtel@thengo.net>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+---
+
+- name: required debian packages
+  ansible.builtin.apt:
+    pkg: python3-apt
+    state: present
+
+- name: debian sources (deb822 format)
+  ansible.builtin.template:
+    src: debian.sources.j2
+    dest: /etc/apt/sources.list.d/debian.sources
+
+- name: remove legacy sources.list
+  ansible.builtin.file:
+    path: /etc/apt/sources.list
+    state: absent
+
+- name: update apt cache
+  ansible.builtin.apt:
+    update_cache: yes
