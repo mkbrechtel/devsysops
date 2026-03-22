@@ -3,5 +3,4 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 [vms]
-sysops-test-ansible
-sysops-test-backup-server
+sysops-test-common
