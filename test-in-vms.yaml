@@ -14,7 +14,7 @@
     vm_disk: 20GiB
 
   pre_tasks:
-    - name: Create VM
+    - name: Ensure local incus VM is available
       delegate_to: localhost
       become: false
       community.general.lxd_container:
@@ -39,6 +39,10 @@
         wait_for_container: true
         wait_for_ipv4_addresses: true
         timeout: 300
+
+    - name: Wait for cloud-init to finish
+      ansible.builtin.command: cloud-init status --wait
+      changed_when: false
 
 - name: Test sysops collection roles
   hosts: vms
