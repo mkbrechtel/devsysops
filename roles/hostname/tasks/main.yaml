@@ -1,23 +1,28 @@
 # SPDX-FileCopyrightText: 2016-2026 Markus Katharina Brechtel <markus.katharina.brechtel@thengo.net>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
-
 ---
 
-- name: hostname
-  hostname:
-    name: "{{inventory_hostname}}"
-  when: not root_target_directory is defined
+- name: Assert system hostname matches expected hostname
+  ansible.builtin.assert:
+    that:
+      - ansible_hostname == hostname | regex_replace('\..*$', '')
+    fail_msg: "System hostname '{{ ansible_hostname }}' does not match expected hostname '{{ hostname }}'"
+  when: not hostname_update
 
+- name: Set hostname
+  ansible.builtin.hostname:
+    name: "{{ hostname }}"
+  when: hostname_update
 
 - name: localhost ipv4 entry
-  lineinfile:
+  ansible.builtin.lineinfile:
     dest: "{{ root_target_directory | default('') }}/etc/hosts"
     regexp: '^127\.0\.0\.1'
-    line: "127.0.0.1 localhost {{inventory_hostname}}{% if inventory_hostname != inventory_hostname_short %} {{inventory_hostname_short}}{% endif %}"
+    line: "127.0.0.1 localhost {{ hostname }}{% if '.' in hostname %} {{ hostname | regex_replace('\\..*$', '') }}{% endif %}"
 
 - name: localhost ipv6 entry
-  lineinfile:
+  ansible.builtin.lineinfile:
     dest: "{{ root_target_directory | default('') }}/etc/hosts"
     regexp: '^::1'
-    line: "::1 localhost ip6-localhost ip6-loopback {{inventory_hostname}}{% if inventory_hostname != inventory_hostname_short %} {{inventory_hostname_short}}{% endif %}"
+    line: "::1 localhost ip6-localhost ip6-loopback {{ hostname }}{% if '.' in hostname %} {{ hostname | regex_replace('\\..*$', '') }}{% endif %}"
