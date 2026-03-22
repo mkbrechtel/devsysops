@@ -4,10 +4,13 @@
 
 ---
 
-- name: required debian packages
-  ansible.builtin.apt:
-    pkg: python3-apt
-    state: present
+- name: Assert running Debian bookworm or trixie
+  ansible.builtin.assert:
+    that:
+      - ansible_distribution == 'Debian'
+      - ansible_distribution_release in ['bookworm', 'trixie']
+    fail_msg: "This role requires Debian bookworm or trixie, but found {{ ansible_distribution }} {{ ansible_distribution_release }}"
+    success_msg: "Running Debian {{ ansible_distribution_release }}"
 
 - name: debian sources (deb822 format)
   ansible.builtin.template:
@@ -18,6 +21,11 @@
   ansible.builtin.file:
     path: /etc/apt/sources.list
     state: absent
+
+- name: required debian packages
+  ansible.builtin.apt:
+    pkg: python3-apt
+    state: present
 
 - name: update apt cache
   ansible.builtin.apt:

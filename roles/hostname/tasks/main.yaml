@@ -8,6 +8,7 @@
     that:
       - ansible_hostname == hostname | regex_replace('\..*$', '')
     fail_msg: "System hostname '{{ ansible_hostname }}' does not match expected hostname '{{ hostname }}'"
+    success_msg: "System hostname '{{ ansible_hostname }}' matches expected hostname '{{ hostname }}'"
   when: not hostname_update
 
 - name: Set hostname
